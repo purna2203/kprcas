@@ -105,5 +105,10 @@ li {
     grid-column-end: 5;
     grid-row-end: 3;
 }
-
-
+@media(max-width:468px){
+    .nav{
+        display: flex;
+        flex-direction: column;
+        color: aqua;
+    }
+}
