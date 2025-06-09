@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form Output</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .nav {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .nav li {
+            cursor: pointer;
+            color: blue;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="nav">
+       <li>Home</li>
+       <li>Service</li>
+       <li>About</li>
+       <li>Contact</li>
+    </ul>
+
+    <form id="studentForm" onsubmit="showInfo(); return false;">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="regdno">Regd No:</label><br>
+        <input type="number" id="regdno" name="regdno" required><br><br>
+
+        <label for="department">Department:</label><br>
+        <input type="text" id="department" name="department" required><br><br>   
+
+        <button type="submit">Submit</button> 
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function showInfo() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const regdno = document.getElementById('regdno').value;
+            const department = document.getElementById('department').value;
+
+            document.getElementById('result').innerText = 
+                `Name: ${name}
+Email: ${email}
+Regdno: ${regdno}
+Department: ${department}`;
+        }
+    </script>
+</body>
+</html>
